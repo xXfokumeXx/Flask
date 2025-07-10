@@ -1,21 +1,12 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route("/hello")
+@app.route("/")
 def hello_world():
-    return "Hello, World!"
+    return render_template("first_page.html")
 
 
 @app.route("/fancy")
 def hello_world_fancy():
-    return """
-        <html>
-        <body>
-
-        <h1>Greetings!</h1>
-        <p>"Hello, World"!</p>
-        
-        </body>
-        </html>
-    """
+    return render_template("second_page.html")
