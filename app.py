@@ -10,3 +10,9 @@ def hello_world():
 @app.route("/fancy")
 def hello_world_fancy():
     return render_template("second_page.html")
+
+@app.route("/template")
+def hello_world_template():
+    return render_template(
+        "jinja_intro.html", name="Pepa Zdepa", template_name="Jinja2"
+    )
